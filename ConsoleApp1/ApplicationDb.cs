@@ -5,6 +5,7 @@ namespace ConsoleApp1
 {
     public class ApplicationDb :DbContext
     {
+        public DbSet<Student> Students { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
