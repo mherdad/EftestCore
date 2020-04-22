@@ -9,9 +9,18 @@ namespace ConsoleApp1
         {
             DbInit();
             Create("ali","ali@");
-            Read(1);
-            Update(1, "ali2", "ali2@");
-            Delete(1);
+            Student stu1= Read(1);
+            Student stu2= Read(1);
+            if (stu1==stu2)
+            {
+               Console.WriteLine("ok");
+            }
+            
+            if (stu1.Id==stu2.Id)
+                Console.WriteLine("Id ok");
+           
+//            Update(1, "ali2", "ali2@");
+//            Delete(1);
             Console.WriteLine("Hello World!");
         }
 
@@ -36,11 +45,12 @@ namespace ConsoleApp1
             }
         }
 
-        private static void Read(int Id)
+        private static Student Read(int Id)
         {
             using (ApplicationDb db = new ApplicationDb())
             {
                 Student stu= db.Students.Find(Id);
+                return stu;
                 Console.WriteLine(stu);
             }
         }
