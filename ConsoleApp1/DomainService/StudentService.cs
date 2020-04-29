@@ -19,7 +19,7 @@ namespace ConsoleApp1
             }
         }
         
-        private  void Delete(int id)
+        public  void Delete(int id)
         {
             using (ApplicationDb db = new ApplicationDb())
             {
@@ -29,7 +29,7 @@ namespace ConsoleApp1
             }
         }
         
-        private  void Update(int id, string newName, string newEmail)
+        public  void Update(int id, string newName, string newEmail)
         {
             using (ApplicationDb db = new ApplicationDb())
             {
